@@ -1,0 +1,124 @@
+/* 全体の基本設定 */
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background-color: #f7fbff;
+    color: #222;
+    line-height: 1.6;
+    margin: 40px;
+}
+
+/* 見出し */
+h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    color: #0b3b66;
+}
+
+/* メインコンテナ（左右ペイン） */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    /* ← 左右を同じ高さに */
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 10vw;
+}
+
+/* 左ペイン */
+.left-pane {
+    flex: 1;
+}
+
+/* 名前 */
+.name {
+    font-size: 1.4rem;
+    color: #0b3b66;
+    padding-left: 1em;
+    margin-bottom: 12px;
+}
+
+/* 情報テーブル */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+}
+
+.info-table th,
+.info-table td {
+    border-bottom: 1px solid #d1d5db;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.info-table th {
+    width: 100px;
+    color: #475569;
+    background-color: #f1f5f9;
+    text-align: center;
+}
+
+/* コメント欄 */
+.comment {
+    background: #eef6ff;
+    padding: 10px;
+    border-radius: 8px;
+    color: #0b3b66;
+}
+
+/* 右ペイン（アバター） */
+.right-pane {
+    flex: 0 0 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ← 縦中央配置 */
+    background: transparent;
+}
+
+/* アバター画像 */
+.right-pane img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 3px solid #858b92;
+    object-fit: cover;
+}
+
+/* フッタ */
+footer {
+    text-align: right;
+    margin-top: 20px;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+/* スマホ対応 */
+@media (max-width: 769px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 5vh;
+        /* width: 90%; */
+    }
+
+    .left-pane {
+        text-align: center;
+        width: 100%;;
+    }
+
+    .name {
+        padding: 0;
+    }
+
+    .info-table th {
+        width: 30%;
+    }
+
+    .right-pane {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+}
