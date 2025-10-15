@@ -155,8 +155,9 @@ section::after {
 ----------------------------- */
 .h-small {
     font-size: 1.1em;
-    color: rgb(102, 126, 207);
-    
+    color: #1c3a65;
+    font-weight: bold;
+    padding-left: 0.55em;
 }
 
 /* フェードイン効果 */
