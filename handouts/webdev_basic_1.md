@@ -24,18 +24,22 @@ https://code.visualstudio.com/
 <!--  -->
 
 ## 1-1. VSCode拡張機能をインストール
-次の拡張機能を入れると便利
 
 <div class="h-small">必須</div>
 
-- **Prettier**：コードをフォーマットしてくれる
-- **TypeScript Extension Pack**：TypeScriptまわりの拡張機能をまとめて導入できる
-- **ESLint**：ESLintをVSCodeで利用できるようにする
+- **Prettier**：
+  コードをフォーマットしてくれる
+- **TypeScript Extension Pack**：
+  TypeScriptまわりの拡張機能をまとめて導入できる
+- **ESLint**：
+  ESLintをVSCodeで利用できるようにする
 
 <div class="h-small">推奨</div>
 
-- **HTML CSS Support**：HTML、CSSの入力補間などを行ってくれる
-- **Node.js Modules Intellisense**：Node.jsのモジュールを補完してくれる
+- **HTML CSS Support**：
+  HTML、CSSの入力補間などを行ってくれる
+- **Node.js Modules Intellisense**：
+  Node.jsのモジュールを補完してくれる
 
 ---
 
