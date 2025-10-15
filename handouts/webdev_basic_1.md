@@ -3,7 +3,6 @@ marp: true
 theme: study
 paginate: true
 ---
-
 <!-- class: title -->
 
 # Webアプリ開発勉強会 第1回
