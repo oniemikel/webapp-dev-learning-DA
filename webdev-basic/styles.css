@@ -1,56 +1,81 @@
-/* 全体の基本設定 */
-body {
-    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-    background-color: #f7fbff;
-    color: #222;
-    line-height: 1.6;
-    margin: 40px;
+/* ====================================
+   基本設定 & テーマカラー
+==================================== */
+:root {
+    --main-color: #0b3b66;
+    --accent-bg: #eef6ff;
+    --text-color: #222;
+    --border-color: #d1d5db;
+    --muted-color: #6b7280;
+    --bg-color: #f7fbff;
 }
 
-/* 見出し */
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: clamp(1rem, 4vw, 3rem);
+}
+
+/* ====================================
+   見出し
+==================================== */
 h1 {
     text-align: center;
     margin-bottom: 24px;
-    font-size: 1.8rem;
-    color: #0b3b66;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--main-color);
 }
 
-/* メインコンテナ（左右ペイン） */
+/* ====================================
+   レイアウト（Grid）
+==================================== */
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    /* ← 左右を同じ高さに */
+    display: grid;
+    grid-template-columns: 1fr auto; /* ← 右ペインの幅に合わせて左を可変 */
+    align-items: center;
+    justify-content: center;
     max-width: 900px;
     margin: 0 auto;
-    gap: 10vw;
+    gap: clamp(1rem, 5vw, 3rem);
+    box-sizing: border-box;
 }
 
-/* 左ペイン */
+/* ====================================
+   左ペイン
+==================================== */
 .left-pane {
-    flex: 1;
+    min-width: 0; /* ← はみ出し防止の超重要設定！ */
 }
 
 /* 名前 */
 .name {
-    font-size: 1.4rem;
-    color: #0b3b66;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    color: var(--main-color);
     padding-left: 1em;
     margin-bottom: 12px;
 }
 
-/* 情報テーブル */
+/* ====================================
+   情報テーブル
+==================================== */
 .info-table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     margin-bottom: 12px;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    table-layout: fixed;
+    word-break: break-word;
 }
 
 .info-table th,
 .info-table td {
-    border-bottom: 1px solid #d1d5db;
-    padding: 6px 8px;
+    border-bottom: 1px solid var(--border-color);
+    padding: clamp(6px, 1vw, 10px) clamp(8px, 2vw, 14px);
     text-align: left;
+    vertical-align: middle;
 }
 
 .info-table th {
@@ -58,67 +83,141 @@ h1 {
     color: #475569;
     background-color: #f1f5f9;
     text-align: center;
+    font-weight: 600;
 }
 
-/* コメント欄 */
+.info-table td {
+    color: #1e293b;
+}
+
+/* ====================================
+   コメント欄
+==================================== */
 .comment {
-    background: #eef6ff;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    background: var(--accent-bg);
     padding: 10px;
     border-radius: 8px;
-    color: #0b3b66;
+    color: var(--main-color);
 }
 
-/* 右ペイン（アバター） */
+/* ====================================
+   右ペイン（アバター画像）
+==================================== */
 .right-pane {
-    flex: 0 0 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* ← 縦中央配置 */
     background: transparent;
+    max-width: 100%;
+    /* ← グリッド内に収める */
 }
 
-/* アバター画像 */
 .right-pane img {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-width: clamp(260px, 25vw, 300px);
+    /* ← 親幅に基づいて柔軟調整 */
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     border: 3px solid #858b92;
     object-fit: cover;
+    height: auto;
 }
 
-/* フッタ */
+/* ====================================
+   フッタ
+==================================== */
 footer {
     text-align: right;
     margin-top: 20px;
-    color: #6b7280;
+    color: var(--muted-color);
     font-size: 0.85rem;
 }
 
-/* スマホ対応 */
+/* ====================================
+   スマホ対応（769px以下）
+==================================== */
 @media (max-width: 769px) {
     .container {
-        flex-direction: column-reverse;
-        align-items: center;
+        grid-template-columns: 1fr;
         gap: 5vh;
-        /* width: 90%; */
+    }
+
+    .right-pane {
+        margin-bottom: 12px;
+        width: 100%;
+        order: -1;
+        /* 画像を上に */
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-pane img {
+        width: auto;
+        max-width: 60%;
+        height: auto;
+        max-height: 40dvh;
+        aspect-ratio: 1 / 1;
     }
 
     .left-pane {
         text-align: center;
-        width: 100%;;
+        width: 100%;
     }
 
     .name {
         padding: 0;
     }
 
-    .info-table th {
-        width: 30%;
+    /* テーブル文字を少し大きめに */
+    .info-table {
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
     }
 
-    .right-pane {
-        margin-bottom: 12px;
+    .info-table th,
+    .info-table td {
+        padding: 10px 8px;
+    }
+}
+
+/* ====================================
+   超狭い画面（500px以下）での表変形
+==================================== */
+@media (max-width: 500px) {
+
+    /* テーブル全体を縦並びに変換 */
+    .info-table,
+    .info-table tbody,
+    .info-table tr,
+    .info-table th,
+    .info-table td {
+        display: block;
         width: 100%;
+    }
+
+    /* 項目名（th） */
+    .info-table th {
+        background: none;
+        color: var(--main-color);
+        text-align: left;
+        padding-top: 10px;
+        font-size: 1.05rem;
+        font-weight: 600;
+    }
+
+    /* 値（td） */
+    .info-table td {
+        padding-left: 1em;
+        padding-bottom: 0.5em;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #334155;
+    }
+
+    /* 趣味リストなどのul要素 */
+    .info-table td ul {
+        margin: 4px 0 0;
+        padding-left: 1.2em;
+        line-height: 1.7;
     }
 }
