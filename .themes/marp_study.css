@@ -115,19 +115,39 @@ blockquote {
     color: #333;
 }
 
+/* --- ブロックコード --- */
 pre {
     background: #f5f5f5;
     border-radius: 8px;
     padding: 1em;
-    font-size: 0.9em;
+    font-size: 1em;
     overflow-x: auto;
+    font-family: Consolas, "Courier New", monospace;
+    line-height: 1.5;
+    color: #222;
+    border: 1px solid #ddd;
+    box-shadow: none !important; /* override */
 }
 
-code {
-    background: #f2f2f2;
+/* ブロック内 code は pre にスタイルが当たるので個別設定不要 */
+pre code {
+    all: unset;
+    /* pre のスタイルを引き継がせる */
+    /* display: block; */
+}
+
+/* --- インラインコード --- */
+p code,
+li code,
+h1 code,
+h2 code,
+h3 code {
+    background: #e0e0e0;
     border-radius: 4px;
-    padding: 0.1em 0.3em;
+    padding: 0.15em 0.4em;
     font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95em;
+    color: #c7254e;
 }
 
 /* ----------------------------
@@ -185,4 +205,16 @@ section::after {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ----------------------------
+   uncover テーマの中央寄せ打ち消し
+----------------------------- */
+section:not(.title):not(.section) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    background: linear-gradient(135deg, #eef4fb, #fdfcf9) !important;
 }
