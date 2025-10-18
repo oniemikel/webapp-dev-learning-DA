@@ -1,11 +1,12 @@
 MIT Non-Commercial License (MIT-NC)
+===================================
 
-Copyright (c) 2025 dakken
+Copyright (c) 2025 OnieMikel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use,
 copy, modify, merge, publish, and distribute copies of the Software for
-**non-commercial purposes only**, subject to the following conditions:
+non-commercial purposes only, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
@@ -17,3 +18,30 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+-------------------------------------------------------------------
+Creative Commons Attribution-NonCommercial 4.0 International License
+(CC BY-NC 4.0)
+-------------------------------------------------------------------
+
+This repository may include documentation, images, or other media files
+that are licensed separately under the Creative Commons
+Attribution–NonCommercial 4.0 International License.
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+Under the following terms:
+- Attribution — You must give appropriate credit to © 2025 OnieMikel.
+- NonCommercial — You may not use the material for commercial purposes.
+
+Full license text:
+https://creativecommons.org/licenses/by-nc/4.0/
+
+-------------------------------------------------------------------
+Summary
+-------------------------------------------------------------------
+- **Code (HTML, CSS, JS, React, etc.)** → MIT Non-Commercial License (MIT-NC)
+- **Documents, text, slides, images, etc.** → CC BY-NC 4.0 License
+- **Copyright © 2025 OnieMikel**
