@@ -235,10 +235,15 @@ section::before {
     font-style: italic;
     position: absolute;
     bottom: 20px;
-    width: 100%;
-    text-align: center;
+    left: 50%;
+    /* 左端を50% */
+    transform: translateX(-50%);
+    /* 自分の幅の半分だけ左にずらす */
+    font-style: italic;
     font-size: 18px;
     color: #666;
+    white-space: nowrap;
+    /* 改行防止 */
 }
 
 /* ----------------------------
