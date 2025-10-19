@@ -72,7 +72,7 @@ https://code.visualstudio.com/
 - **ESLint**：  
   ESLintをVSCodeで利用できるようにする
 - **git**：
-  ファイルのバージョン管理ツールを利用できるようにする
+  ファイルのバージョン管理ツールをVSCodeで利用できるようにする
 
 
 ---
