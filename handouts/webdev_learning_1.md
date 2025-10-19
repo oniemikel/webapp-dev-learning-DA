@@ -12,6 +12,8 @@ paginate: true
 
 <!-- class: -->
 
+# 目次
+
 - [1. Node.jsのインストール](#1-nodejsのインストール)
 - [2. pnpmのインストール](#2-pnpmのインストール)
 - [3. gitのインストール](#3-gitのインストール)
@@ -66,13 +68,13 @@ https://code.visualstudio.com/
 <div class="h-small">必須</div>
 
 - **Prettier**：  
-  コードをフォーマットしてくれる
+  　コードをフォーマットしてくれる
 - **TypeScript Extension Pack**：  
-  TypeScriptまわりの拡張機能をまとめて導入できる
+  　TypeScriptまわりの拡張機能をまとめて導入できる
 - **ESLint**：  
-  ESLintをVSCodeで利用できるようにする
+  　ESLintをVSCodeで利用できるようにする
 - **git**：
-  ファイルのバージョン管理ツールをVSCodeで利用できるようにする
+  　ファイルのバージョン管理ツールをVSCodeで利用できるようにする
 
 
 ---
@@ -82,9 +84,9 @@ https://code.visualstudio.com/
 <div class="h-small">推奨</div>
 
 - **HTML CSS Support**：  
-  HTML、CSSの入力補間などを行ってくれる
+  　HTML、CSSの入力補間などを行ってくれる
 - **Node.js Modules Intellisense**：  
-  Node.jsのモジュールを補完してくれる
+  　Node.jsのモジュールを補完してくれる
 
 ---
 
