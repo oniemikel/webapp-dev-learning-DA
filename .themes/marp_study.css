@@ -229,6 +229,18 @@ section::after {
     color: #aaa;
 }
 
+/* フッタ文字列（下中央） */
+section::before {
+    content: "© 2025 OnieMikel. All rights reserved.";
+    font-style: italic;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+
 /* ----------------------------
    文字装飾用
 ----------------------------- */
