@@ -90,6 +90,27 @@ https://code.visualstudio.com/
 
 ---
 
+## 5. gitアカウントを設定する（VSCode）
+
+VSCode内にあるアカウント（Accounts）ボタンから、Gitアカウントを追加する。
+<!-- ここは適宜加筆してください -->
+
+---
+
+## 6. gitアカウントを設定する（コマンドライン）
+
+コマンドラインから、下記コマンドを実行する。
+`--global`オプションをつけると、ユーザ全体でアカウント情報が設定される。
+
+```bash
+git config --global user.name "ユーザー名"
+git config --global user.email "メールアドレス"
+```
+※オプションの詳細については以下を参考にすると良い
+https://tech-broccoli.life/articles/engineer/gitconfig-level/
+
+---
+
 <!-- class: section -->
 
 ### **これでひとまずは環境構築終わりです。**
