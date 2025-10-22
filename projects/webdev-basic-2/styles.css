@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fffbdb;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    width: min(400px, 95vw);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+h1 {
+    margin: 0;
+    color: #2f4f4f;
+}
+
+#status {
+    font-size: 16px;
+    color: #444;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.game-button {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 10px;
+    font-size: clamp(30px, 8vw, 42px);
+    font-weight: 600;
+    color: #181818;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, transform 0.1s;
+    position: relative;
+}
+
+/* --- 各プレイヤー用デザイン --- */
+.game-button[data-player="circle"] {
+    color: #3498db;
+    text-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+    animation: fadeInPop 0.25s ease-out;
+}
+
+.game-button[data-player="cross"] {
+    color: #e74c3c;
+    text-shadow: 0 0 8px rgba(231, 76, 60, 0.4);
+    animation: fadeInSpin 0.3s ease-out;
+}
+
+/* --- アニメーション --- */
+@keyframes fadeInPop {
+    0% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSpin {
+    0% {
+        transform: scale(0.4) rotate(-180deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.game-button:hover:not(:disabled) {
+    background-color: #181818;
+    color: #f4f4f4;
+    transform: scale(1.05);
+}
+
+.game-button:disabled {
+    opacity: 0.9;
+    cursor: default;
+}
+
+#reset-btn {
+    background-color: #32cd32;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#reset-btn:hover {
+    background-color: #228b22;
+}
+
+/* ○（より大きく、明るい青で発光感あり） */
+.mark-o {
+    color: #0078ff !important;
+    font-size: 2.5em;
+    /* 通常より大きめ */
+    font-weight: bolder;
+    display: inline-block;
+    line-height: 1;
+    transform: scale(1.2);
+    text-shadow: 0 0 5px rgba(0, 120, 255, 0.6), 0 0 20px rgba(0, 120, 255, 0.3);
+}
+
+/* ✕（赤く鋭い印象を維持） */
+.mark-x {
+    color: #ff0044 !important;
+    font-size: 1.8em;
+    font-weight: bolder;
+    display: inline-block;
+    line-height: 1;
+    text-shadow: 0 0 5px rgba(255, 0, 68, 0.6), 0 0 20px rgba(255, 0, 68, 0.3);
+}
