@@ -121,11 +121,7 @@ blockquote {
 
 
 /* --- インラインコード --- */
-p code,
-li code,
-h1 code,
-h2 code,
-h3 code {
+section code {
     background: #eaeaea;
     border-radius: 4px;
     padding: 0.15em 0.4em;
@@ -253,6 +249,67 @@ section::before {
     margin: 0.2em 0 0;
     padding-left: 0.55em;
 }
+
+/* ----------------------------
+   テーブルのデザイン（中央寄せ対応）
+----------------------------- */
+section table {
+    border-collapse: collapse;
+    width: auto;
+    /* 固定ではなく中身に合わせる */
+    margin: 2em auto;
+    /* ブロック中央寄せ */
+    align-self: center;
+    /* 親flexの左寄せを上書き */
+    font-size: 0.9em;
+    background: #ffffffee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ヘッダーセル */
+section th {
+    background: #4f85cc;
+    color: #eff6ff;
+    font-weight: 700;
+    padding: 0.6em 1em;
+    border-bottom: 2px solid #d0e0f0;
+    text-align: center;
+}
+
+/* データセル */
+section td {
+    background: #fff;
+    color: #222;
+    padding: 0.6em 1em;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+/* 説明欄は左ぞろえ */
+section td:nth-child(2) {
+    text-align: left;
+}
+
+/* 最終行の下線を消す */
+section tr:last-child td {
+    border-bottom: none;
+}
+
+/* 横罫線のホバー強調（勉強会プレゼン向けに視覚補助） */
+section tr:hover td {
+    background: #f5f9ff;
+}
+
+/* -----------------------------
+   アンダーラインされた文字の装飾
+------------------------------ */
+u {
+    text-decoration: underline;
+    color: rgb(2, 3, 51);
+}
+
 
 /* フェードイン効果 */
 .fadein {
