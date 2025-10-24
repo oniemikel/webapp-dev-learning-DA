@@ -138,14 +138,13 @@ pre {
     color: #dcdcdc;
     border-radius: 8px;
     padding: 1em 1.2em;
-    overflow-x: auto;
+    overflow-x: none;
     box-shadow: none;
     border: none;
-
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.95em;
     line-height: 1.5;
-
+    
     /* 中央揃え */
     margin: 1em auto; /* ← これで中央寄せ */
     /* display: block; */
@@ -253,44 +252,66 @@ section::before {
 /* ----------------------------
    テーブルのデザイン（中央寄せ対応）
 ----------------------------- */
+/* ===== テーブル：中央揃えかつ左右いっぱい（px未使用） ===== */
 section table {
-    border-collapse: collapse;
-    width: auto;
-    /* 固定ではなく中身に合わせる */
-    margin: 2em auto;
-    /* ブロック中央寄せ */
-    align-self: center;
-    /* 親flexの左寄せを上書き */
+    display: table;
+    width: calc(100% - 2rem);
+    margin: 0 auto; /* 横中央（実質は左右0） */
+    padding: 0;
     font-size: 0.9em;
     background: #ffffffee;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     overflow: hidden;
+    border-collapse: collapse;
+
+    /* 重要：列幅を割合に基づいて固定配分する（右余白対策） */
+    table-layout: fixed;
+
+    /* 内側のパディングも幅計算に含める */
+    box-sizing: border-box;
 }
 
-/* ヘッダーセル */
+/* セルの基礎 */
+section th,
+section td {
+    box-sizing: border-box;      /* パディング込みで幅を扱う（重要） */
+    padding: 0.6em 1em;
+    text-align: center;
+    overflow-wrap: anywhere;     /* 長い単語でも折り返す */
+    word-break: break-word;
+}
+
+section th:nth-child(1),
+section td:nth-child(1) {
+    width: 20%;
+}
+
+section th:nth-child(2),
+section td:nth-child(2) {
+    width: 80%;
+}
+
+/* ヘッダーセル見た目 */
 section th {
     background: #4f85cc;
     color: #eff6ff;
     font-weight: 700;
-    padding: 0.6em 1em;
     border-bottom: 2px solid #d0e0f0;
-    text-align: center;
 }
 
 /* データセル */
 section td {
     background: #fff;
     color: #222;
-    padding: 0.6em 1em;
     border-bottom: 1px solid #e0e0e0;
-    text-align: center;
 }
 
-/* 説明欄は左ぞろえ */
+/* 説明欄は左寄せ */
 section td:nth-child(2) {
     text-align: left;
 }
+
 
 /* 最終行の下線を消す */
 section tr:last-child td {
