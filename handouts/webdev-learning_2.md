@@ -66,7 +66,7 @@ HTML = **Hyper-Text Markup Language** の略。
 
 **head** と **body** という大きな2つの部分で構成される。
 
-![図1. webページの構造](images/png/webpage_sturucture_1.png)
+<img src="./images/png/webpage_structure_1.png" height="50%">
 
 ---
 
