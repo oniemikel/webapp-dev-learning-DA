@@ -281,7 +281,7 @@ section th,
 section td {
     box-sizing: border-box;      /* パディング込みで幅を扱う（重要） */
     padding: 0.6em 1em;
-    text-align: center;
+    text-align: left;
     overflow-wrap: anywhere;     /* 長い単語でも折り返す */
     word-break: break-word;
 }
@@ -291,15 +291,16 @@ section td:nth-child(1) {
     width: 20%;
 }
 
-section th:nth-child(2),
+/* section th:nth-child(2),
 section td:nth-child(2) {
     width: 80%;
-}
+} */
 
 /* ヘッダーセル見た目 */
 section th {
     background: #4f85cc;
     color: #eff6ff;
+    text-align: center;
     font-weight: 700;
     border-bottom: 2px solid #d0e0f0;
 }
@@ -311,9 +312,9 @@ section td {
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* 説明欄は左寄せ */
-section td:nth-child(2) {
-    text-align: left;
+/* 行見出しは中央ぞろえ */
+section td:nth-child(1) {
+    text-align: center;
 }
 
 
